@@ -15,8 +15,20 @@ export const Header = () => {
         setDrawer(false);
     }, [currentPath]);
 
+    useEffect(() => {
+        const handle = (e: KeyboardEvent) => {
+            if(e.key === 'Escape') {
+                setDrawer(false);
+            }
+        };
+        
+        window.addEventListener('keydown', handle);
+        return () => window.removeEventListener('keydown', handle);	
+    }, []);
+
     return (
-            <nav className="flex gap-6 items-center justify-start md:justify-center  bg-primary py-4 sm:py-6 px-6">
+        <>
+            <nav className="flex gap-6 items-center justify-start fixed top-0 right-0 left-0 md:justify-center  bg-primary py-4 sm:py-6 px-6">
                 <ul 
                     tabIndex={drawer ? -1 : undefined}
                     className="flex gap-4">
@@ -54,21 +66,21 @@ export const Header = () => {
                     tabIndex={drawer ? undefined : -1}
                     className="
                         data-[open=false]:-translate-x-full transiciton-transform
-                        fixed top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-background">
+                        sm:hidden fixed top-0 left-0 bottom-0 right-0 bg-gradient-to-r from-background">
                     <ul 
                         onClick={e => e.stopPropagation()}
                         className="flex flex-col p-4 w-60 h-full gap-2 bg-background">
-                            <li>
+                            <li className="outline-offset-4">
                                 <Link href='/' data-active={currentPath === '/'} className='data-[active=true]:underline'>
                                     Página inicial
                                 </Link>
                             </li>
-                            <li>
+                            <li className="outline-offset-4">
                                 <Link href='/cursos' data-active={currentPath === '/cursos'} className='data-[active=true]:underline'>
                                     Cursos
                                 </Link>
                             </li>
-                            <li>
+                            <li className="outline-offset-4">
                                 <Link 
                                     href='https://blog.codarse.com' target="_blank"
                                     className="flex items-center gap-1"
@@ -79,9 +91,11 @@ export const Header = () => {
                             </li>
                     </ul>
                 </div>
-                <h1 className="sm:hidden">
-                     {title}
+                <h1 className="sm:hidden line-clamp-1">
+                    {title}
                 </h1>
             </nav>
+            <div className='h-14 sm:h-[72px]' />
+        </>
     );
 };
