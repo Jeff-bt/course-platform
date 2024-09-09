@@ -1,4 +1,4 @@
-import { Card } from "@/components/Card/Card";
+import { Card } from "@/components/card/Card";
 import { Section } from "@/components/section/Section";
 import { Metadata } from "next";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function PageHome() {
   return (
     <main className="mt-8 flex justify-center max-w-full">
-      <div className="min-[880px]:max-w-[880px]">
+      <div className="w-full min-[880px]:max-w-[880px]">
       <Section 
           title="Veja mais cursos"
           variant="h-list"

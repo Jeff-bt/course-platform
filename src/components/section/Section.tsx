@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, ICardProps } from "../Card/Card";
+import { Card, ICardProps } from "../card/Card";
 import { UIEvent, useRef, useState } from "react";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
