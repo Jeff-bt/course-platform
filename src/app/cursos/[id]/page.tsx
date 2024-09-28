@@ -1,5 +1,6 @@
 import { Class } from "@/components/course-content/components/Class";
 import { ClassGroup } from "@/components/course-content/components/ClassGroup";
+import { CourseContent } from "@/components/course-content/CourseContent";
 import { CourseHeader } from "@/components/course-header/CourseHeader";
 import { StartCourse } from "@/components/StartCourse";
 import { Metadata } from "next";
@@ -31,15 +32,27 @@ export default function PageCourseDetail({ params }: Props) {
 						imageUrl="https://i.ytimg.com/vi/SVepTuBK4V0/hqdefault.jpg"
 					/>
 				</div>
-				<div className="flex-[2] flex flex-col gap-4">
+				<div className="flex-[2] flex flex-col gap-12">
 					<CourseHeader />
 					
-					<ClassGroup 
-						title="Introdução e apresentação do projeto"
-						courseId="123"
-						classes={[
-							{id: '123', title: 'NextJs, TailwindCSS'},
-							{id: '1234', title: 'NextJs, TailwindCSS'},
+					<CourseContent 
+						classGroups={[
+							{
+								courseId: "123",
+								title: "Introdução e apresentação do projeto",
+								classes: [
+									{id: '123', title: 'NextJs, TailwindCSS'},
+									{id: '1234', title: 'NextJs, TailwindCSS'},
+								]
+							},
+							{
+								courseId: "122",
+								title: "Introdução e apresentação do projeto",
+								classes: [
+									{id: '123', title: 'NextJs, TailwindCSS'},
+									{id: '1234', title: 'NextJs, TailwindCSS'},
+								]
+							}
 						]}
 					/>
 				</div>
