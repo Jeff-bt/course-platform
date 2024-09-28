@@ -1,3 +1,4 @@
+import { Class } from "@/components/course-content/components/Class";
 import { CourseHeader } from "@/components/course-header/CourseHeader";
 import { StartCourse } from "@/components/StartCourse";
 import { Metadata } from "next";
@@ -31,12 +32,11 @@ export default function PageCourseDetail({ params }: Props) {
 				</div>
 				<div className="flex-[2]">
 					<CourseHeader />
-					<CourseHeader />
-					<CourseHeader />
-					<CourseHeader />
-					<CourseHeader />
-					<CourseHeader />
-					<CourseHeader />
+					
+					<Class 
+						playerUrl="link"
+						title="Aula 1"
+					/>
 				</div>
 
             </div>
