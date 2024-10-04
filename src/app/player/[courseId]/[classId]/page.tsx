@@ -1,3 +1,5 @@
+'use client';
+import { PlayerClass } from "@/components/player/PlayerClass";
 import { PlayerHeader } from "@/components/player/PlayerHeader";
 
 interface Props {
@@ -13,7 +15,14 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                 title="Curso"
                 subtitle="descrição"
             />
-            Player {courseId} {classId}
+            <PlayerClass
+                done={false}
+                playing={true}
+                title="Titulo da aula"
+
+                onCheck={() => console.log("check")}
+                onPlay={() => console.log("check")}
+            />
         </>
     );
 };
