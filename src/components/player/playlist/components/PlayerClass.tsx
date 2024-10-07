@@ -11,7 +11,7 @@ export interface IPlayerClassProps {
 }
 export const PlayerClass = ({ playing, title, done, onCheck, onPlay }:IPlayerClassProps) => {
     return (
-        <button className="flex gap-6 p-4 items-center" onClick={onPlay}> 
+        <button className="flex gap-6 p-4 items-center" onClick={() => onPlay()}> 
             {!done && (
                 <div className="group" onClick={e => { e.stopPropagation(); onCheck; }}>
                     <MdPlayCircleOutline
