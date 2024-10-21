@@ -2,6 +2,7 @@ import { PlayerClass } from "@/components/player/playlist/components/PlayerClass
 import { PlayerClassGroup } from "@/components/player/playlist/components/PlayerClassGroup";
 import { PlayerHeader } from "@/components/player/PlayerHeader";
 import { PlayerPlaylist } from "@/components/player/playlist/PlayerPlaylist";
+import { PlayerVideoPlayer } from "@/components/player/PlayerVideoPlayer";
 
 interface Props {
     params: {
@@ -24,7 +25,7 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                     playingCourseId={courseId}
                         classGroups={[
                             {
-                                title: 'Introdução e apresentação do projeto',
+                                title: '1 Introdução e apresentação do projeto',
                                 classes: [
                                   {
                                     done: true,
@@ -49,7 +50,7 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                                 ]
                               },
                               {
-                                title: 'Introdução e apresentação do projeto',
+                                title: '2 Introdução e apresentação do projeto',
                                 classes: [
                                   {
                                     done: true,
@@ -74,7 +75,7 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                                 ]
                               },
                               {
-                                title: 'Introdução e apresentação do projeto',
+                                title: '3 Introdução e apresentação do projeto',
                                 classes: [
                                   {
                                     done: true,
@@ -99,7 +100,7 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                                 ]
                               },
                               {
-                                title: 'Introdução e apresentação do projeto',
+                                title: '4 Introdução e apresentação do projeto',
                                 classes: [
                                   {
                                     done: true,
@@ -129,7 +130,9 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                 </div>
 
                 <div className="flex-1">
-                    Player
+                    <PlayerVideoPlayer
+                      videoId='apXQAnFX3JM&list'
+                    />
                 </div>
             </div>
 
