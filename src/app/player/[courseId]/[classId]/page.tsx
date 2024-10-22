@@ -130,9 +130,11 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                 </div>
 
                 <div className="flex-1">
-                    <PlayerVideoPlayer
-                      videoId='apXQAnFX3JM&list'
-                    />
+                  <div className="aspect-video">
+                      <PlayerVideoPlayer
+                        videoId='apXQAnFX3JM&list'
+                      />
+                  </div>
                 </div>
             </div>
 
