@@ -1,4 +1,4 @@
-import { PlayerClass } from "@/components/player/playlist/components/PlayerClass";
+'use client';
 import { PlayerClassGroup } from "@/components/player/playlist/components/PlayerClassGroup";
 import { PlayerHeader } from "@/components/player/PlayerHeader";
 import { PlayerPlaylist } from "@/components/player/playlist/PlayerPlaylist";
@@ -133,6 +133,7 @@ export default function PagePlayer({params: { classId, courseId }}: Props) {
                   <div className="aspect-video">
                       <PlayerVideoPlayer
                         videoId='apXQAnFX3JM&list'
+                        onPlayNext={() => console.log('next')}
                       />
                   </div>
                 </div>
